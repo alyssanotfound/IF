@@ -29,17 +29,24 @@ int i;
        
     for (i = 0; i < buflen; i++)
     {
-        
+        //Serial.println(i);
         Serial.write(buf[i]); // the received data is stored in buffer
-        //if (buf[0] == '1' && buf[1] == '2' && buf[2] == '3') 
-        //  {
-        //    digitalWrite(redPin, HIGH);
-        //    delay(10);
-        //    digitalWrite(redPin, LOW);
-         //   delay(10);
-        //  }
+        
         
         }
+        
+    Serial.println("START of first three characters.");
+    Serial.write(buf[0]);
+    Serial.write(buf[1]);
+    Serial.write(buf[2]);
+     if (buf[0] == 'C' && buf[1] == 'o' && buf[2] == 'm') 
+          {
+            digitalWrite(redPin, HIGH);
+            delay(10);
+            digitalWrite(redPin, LOW);
+            delay(10);
+          }
+     Serial.println("END");
     Serial.println("");
      }
 }

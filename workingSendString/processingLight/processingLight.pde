@@ -1,7 +1,7 @@
 import processing.serial.*;
 Serial port;
 String button = "Submit";
-String myText = "1";
+String myText = "A";
 int rectX, rectY;      // Position of square button
 int rectSize = 20;     // Diameter of rect
 color rectColor, baseColor;
@@ -47,7 +47,7 @@ void mousePressed() {
 
 void mouseReleased() {
   if (rectOver) {
-   port.write("2");
+   port.write("B");
   }
 }
 
@@ -62,7 +62,7 @@ void keyPressed() {
   } else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
     myText = myText + key;
   }
-  //println(myText);
+  println(myText);
 }
 
 
